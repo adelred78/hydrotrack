@@ -10,13 +10,13 @@
   </head>
   <body>
     <header>
-      <a href="index.php"
+      <a href="index.html"
         ><img src="./IMG/logo_projet.png" alt="Logo du projet HydroTrack"
       /></a>
       <nav>
         <ul>
-          <li><a href="index.php" class="active">Accueil</a></li>
-          <li><a href="a_propos.php">A propos</a></li>
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="a_propos.html">A propos</a></li>
           <li><a href="nous_contacter.html">Contact</a></li>
           <li><a href="team.html">Equipe</a></li>
           <li><a href="connexion.php" class="login">Login</a></li>
