@@ -21,6 +21,17 @@ body {
   background-repeat: no-repeat;
 }
 
+@media (max-width: 700px) {
+  body {
+    background-image:
+      linear-gradient(rgba(71, 143, 71, 0.35), rgba(71, 143, 71, 0.35)),
+      url('../IMG/pexels-pareekshith-indeever-155333695-10697615.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 /* =====================
    HEADER
 ===================== */
@@ -84,8 +95,25 @@ nav ul li a:hover {
   font-size: 16px;
 }
 
-.login:hover {
-  opacity: 0.9;
+@media (max-width: 700px) {
+  header {
+    padding: 20px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header nav {
+    margin-top: 5px;
+  }
+
+  header nav ul {
+    gap: 30px;
+  }
+
+  header img {
+    width: 85px;
+  }
 }
 
 /* =====================
@@ -162,6 +190,9 @@ nav ul li a:hover {
 @media (max-width: 700px) {
   .first {
     padding: 50px 24px;
+    margin-top: 200px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   .first h2 {
