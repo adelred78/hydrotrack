@@ -1,0 +1,103 @@
+<?php
+include('header.php');
+?>
+
+    <div class="first">
+      <h2>
+        Surveillez l'humidité de vos cultures avec <span>HydroTrack</span>
+      </h2>
+      <ul>
+        <li><a href="inscription.php">Commencer</a></li>
+        <li><a href="a_propos.html">En savoir plus</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== Fonctionnalités principales ===== -->
+    <section class="features">
+      <h2 class="features-title">
+        <span>Fonctionnalités <i style="color: #478f47">principales</i></span>
+      </h2>
+
+      <div class="features-container">
+        <div class="feature-card">
+          <img src="./IMG/11298723.png" alt="Capteur de sol" />
+          <h3>Capteur de sol</h3>
+          <p>
+            Suivi précis de l’humidité grâce à un capteur capacitif installé
+            dans le sol.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <img src="./IMG/alerte.png" style="width: 33%" alt="Alerte en temps réel" />
+          <h3>Alerte en temps réel</h3>
+          <p>
+            Recevez des alertes instantanées en cas de sécheresse sur votre
+            téléphone.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <img src="./IMG/donne.png" alt="Données cloud" style="width: 33%" />
+          <h3>Données centralisées</h3>
+          <p>
+            Les données sont stockées et consultables en toute sécurité via la
+            plateforme.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="logo_projet.png"
+            alt="HydroTrack logo"
+            class="logo_footer"
+          />
+          <p>
+            HydroTrack est une solution intelligente permettant de surveiller
+            l’humidité des sols et d’optimiser l’arrosage.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a_propos.html">À propos</a></li>
+            <li><a href="team.html">Équipe</a></li>
+            <li><a href="nous_contacter.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Projet</h4>
+          <ul>
+            <li><a href="#">Fonctionnalités</a></li>
+            <li><a href="#">Sécurité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 HydroTrack — Créé par <strong>L'equipe HydroTrack</strong></p>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.querySelector('header');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </body>
+</html>
