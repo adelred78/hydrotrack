@@ -184,8 +184,7 @@ nav ul li a:hover {
 /* Bouton principal */
 .first ul li:first-child {
   background-color: #1e5eff;
-  display: inline-block;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
@@ -203,7 +202,7 @@ nav ul li a:hover {
   background-color: #ffffff;
   border: 2px solid #ababab;
   display: inline-block;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
@@ -275,7 +274,7 @@ nav ul li a:hover {
 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
