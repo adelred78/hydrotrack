@@ -10,7 +10,7 @@
 body {
   min-height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 
   background-image:
     linear-gradient(rgba(71, 143, 71, 0.35), rgba(71, 143, 71, 0.35)),
@@ -23,12 +23,16 @@ body {
 
 @media (max-width: 700px) {
   body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     background-image:
       linear-gradient(rgba(71, 143, 71, 0.35), rgba(71, 143, 71, 0.35)),
       url('../IMG/pexels-pareekshith-indeever-155333695-10697615.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow-x: hidden;
   }
 }
 
@@ -69,6 +73,10 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 80px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
 }
 
 nav ul li a {
@@ -93,11 +101,17 @@ nav ul li a:hover {
   border-radius: 6px;
   text-decoration: none;
   font-size: 16px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.login:hover {
+  transform: scale(1.08);
 }
 
 @media (max-width: 700px) {
   header {
-    padding: 20px 20px;
+    padding: 10px 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -108,7 +122,8 @@ nav ul li a:hover {
   }
 
   header nav ul {
-    gap: 30px;
+    gap: 20px;
+    justify-content: center;
   }
 
   header img {
@@ -125,7 +140,7 @@ nav ul li a:hover {
   margin-left: auto;
   margin-right: auto;
 
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.85);
   color: #0f172a;
 
   padding: 100px 60px;
@@ -163,11 +178,19 @@ nav ul li a:hover {
   border-radius: 8px;
   font-size: 16px;
   font-weight: 500;
+  display: inline-block;
 }
 
 /* Bouton principal */
 .first ul li:first-child {
   background-color: #1e5eff;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.first ul li:first-child:hover {
+  transform: scale(1.08);
 }
 
 .first ul li:first-child a {
@@ -179,6 +202,13 @@ nav ul li a:hover {
 .first ul li:last-child {
   background-color: #ffffff;
   border: 2px solid #ababab;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.first ul li:last-child:hover {
+  transform: scale(1.08);
 }
 
 .first ul li:last-child a {
@@ -245,6 +275,12 @@ nav ul li a:hover {
 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   text-align: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
 }
 
 /* Icônes */
