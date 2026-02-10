@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HydroTrack</title>
+    <link rel="icon" href="./IMG/logo_projet.png" />
+
+    <link rel="stylesheet" href="Style/index.css" />
+  </head>
+  <body>
+    <h1>A Propos d’Hydrotrack
+Optimisez l’irrigation de vos culture grace a la surveillance intelligente et en temps réel de l’humidité du sol.</h1>
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="./IMG/logo_projet.png"
+            alt="HydroTrack logo"
+            class="logo_footer"
+          />
+          <p>
+            HydroTrack est une solution intelligente permettant de surveiller
+            l’humidité des sols et d’optimiser l’arrosage.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a_propos.html">À propos</a></li>
+            <li><a href="team.html">Équipe</a></li>
+            <li><a href="nous_contacter.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Projet</h4>
+          <ul>
+            <li><a href="#">Fonctionnalités</a></li>
+            <li><a href="#">Sécurité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 HydroTrack — Créé par <strong>L'equipe HydroTrack</strong></p>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.querySelector('header');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+    <!-- Ton script -->
+    <script src="script.js"></script>
+  </body>
+</html>
