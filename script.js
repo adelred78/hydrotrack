@@ -37,7 +37,3 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
   localStorage.setItem('user', JSON.stringify(data));
   window.location.href = 'dashboard.html';
 });
-
-
-
-ssssssssssssssssstuuzetfuyfgyzegyifuyzgeiufguyzgf
