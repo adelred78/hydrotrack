@@ -3,10 +3,10 @@ const SUPABASE_ANON_KEY = 'sb_publishable_oNwn7Mn-zQtj-rvM62J6TA_fCIfeCrX';
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-console.log('Supabase connecté :', supabaseClient);
+console.log('Supabase connecté');
 
 /* =========================
-   LOGIN (connexion.html)
+   LOGIN
 ========================= */
 const loginForm = document.getElementById('login-form');
 
@@ -17,12 +17,6 @@ if (loginForm) {
     const username = document.getElementById('username')?.value.trim();
     const password = document.getElementById('password')?.value;
 
-    const errorMessage = document.getElementById('error-message');
-    if (errorMessage) {
-      errorMessage.style.display = 'none';
-      errorMessage.textContent = '';
-    }
-
     const { data, error } = await supabaseClient
       .from('utilisateurs')
       .select('*')
@@ -31,12 +25,7 @@ if (loginForm) {
       .single();
 
     if (error || !data) {
-      if (errorMessage) {
-        errorMessage.textContent = 'Identifiants incorrects.';
-        errorMessage.style.display = 'block';
-      } else {
-        alert('Identifiants incorrects.');
-      }
+      alert('Identifiants incorrects.');
       return;
     }
 
@@ -46,7 +35,7 @@ if (loginForm) {
 }
 
 /* =========================
-   SIGNUP (inscription.html)
+   SIGNUP
 ========================= */
 const signupForm = document.getElementById('signup-form');
 
@@ -54,60 +43,32 @@ if (signupForm) {
   signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // ⚠️ Ici on lit les champs de TON HTML inscription (name="...")
-    const username = document
-      .querySelector('input[name="username"]')
-      ?.value.trim();
-    const email = document.querySelector('input[name="email"]')?.value.trim(); // pas stocké si ta table n’a pas la colonne
-    const password = document.querySelector('input[name="password"]')?.value;
+    const username = document.getElementById('signup-username').value.trim();
+    const password = document.getElementById('signup-password').value;
 
-    const superficie = document.querySelector(
-      'input[name="superficie"]'
-    )?.value;
-    const ville = document.querySelector('input[name="ville"]')?.value;
-    const frequence = document.querySelector('select[name="frequence"]')?.value;
-
-    // Zone d’erreur (si tu n’en as pas, on fallback sur alert)
-    const errorMessage = document.getElementById('signup-error');
-
-    const showError = (msg) => {
-      if (errorMessage) {
-        errorMessage.textContent = msg;
-        errorMessage.style.display = 'block';
-      } else {
-        alert(msg);
-      }
-    };
-
-    if (errorMessage) {
-      errorMessage.style.display = 'none';
-      errorMessage.textContent = '';
-    }
+    const superficie = document.getElementById('superficie').value;
+    const ville = document.getElementById('ville').value;
+    const frequence = document.getElementById('frequence').value;
 
     if (!username || !password) {
-      showError('Username et mot de passe requis.');
+      alert('Veuillez remplir les champs.');
       return;
     }
 
-    // Vérifier si username existe déjà
-    const { data: existingUser, error: existsErr } = await supabaseClient
+    // Vérifier si déjà existant
+    const { data: existingUser } = await supabaseClient
       .from('utilisateurs')
       .select('id')
       .eq('nom_utilisateur', username)
       .maybeSingle();
 
-    if (existsErr) {
-      showError('Erreur vérification utilisateur: ' + existsErr.message);
-      return;
-    }
-
     if (existingUser) {
-      showError("Nom d'utilisateur déjà utilisé.");
+      alert("Nom d'utilisateur déjà utilisé.");
       return;
     }
 
-    // Insérer le nouvel utilisateur (on ne met que les colonnes qui existent vraiment)
-    const { data: newUser, error: insertErr } = await supabaseClient
+    // Insertion
+    const { data, error } = await supabaseClient
       .from('utilisateurs')
       .insert([
         {
@@ -118,18 +79,16 @@ if (signupForm) {
       .select()
       .single();
 
-    if (insertErr) {
-      showError('Erreur inscription: ' + insertErr.message);
+    if (error) {
+      alert('Erreur : ' + error.message);
       return;
     }
 
-    // Stocker l’utilisateur (comme ton login)
-    localStorage.setItem('user', JSON.stringify(newUser));
-
-    // (Optionnel) stocker la config localement si tu veux l’utiliser dans app.html
+    // Stockage local
+    localStorage.setItem('user', JSON.stringify(data));
     localStorage.setItem(
       'hydrotrack_config',
-      JSON.stringify({ email, superficie, ville, frequence })
+      JSON.stringify({ superficie, ville, frequence })
     );
 
     alert('Inscription réussie 🚀');
