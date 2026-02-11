@@ -30,7 +30,7 @@ if (loginForm) {
     }
 
     localStorage.setItem('user', JSON.stringify(data));
-    window.location.href = 'dashboard.html';
+    window.location.href = 'app.html';
   });
 }
 
