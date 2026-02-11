@@ -3,10 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <title>Connexion – HydroTrack</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Style/index.css" />
+
   </head>
 
-  <body class="auth-page">
+  <body>
+
+  <header>
+      <a href="index.html">
+        <img src="./IMG/logo_projet.png" alt="Logo HydroTrack" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a_propos.html">A propos</a></li>
+          <li><a href="kit.html">Smart Pack</a></li>
+          <li><a href="team.html">Equipe</a></li>
+          <li>
+            <a href="connexion.html" class="login" style="color: white">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
     <div class="login-container">
       <form id="login-form" class="login-form">
         <h2>Connexion <span class="brand">HydroTrack</span></h2>
@@ -53,5 +73,7 @@
     <!-- Supabase -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
+
+    
   </body>
 </html>

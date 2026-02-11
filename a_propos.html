@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HydroTrack - À propos</title>
+    <link rel="icon" href="./IMG/logo_projet.png" />
+    <link rel="stylesheet" href="Style/index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    <header>
+      <a href="index.html">
+        <img src="./IMG/logo_projet.png" alt="Logo HydroTrack" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a_propos.html" class="active">A propos</a></li>
+          <li><a href="kit.html">Smart Pack</a></li>
+          <li><a href="team.html">Equipe</a></li>
+          <li>
+            <a href="connexion.html" class="login" style="color: white">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="first1">
+      <h1>À propos d’HydroTrack</h1>
+      <h2>
+        HydroTrack est une solution intelligente de surveillance de l’humidité
+        du sol permettant d’optimiser l’irrigation agricole grâce à des capteurs
+        connectés et une plateforme cloud accessible en temps réel.
+      </h2>
+    </section>
+
+    <!-- ===== Présentation du projet ===== -->
+    <section class="about-description">
+      <h2>Une solution innovante pour l’agriculture moderne</h2>
+      <p>
+        Face aux défis liés au changement climatique et à la gestion durable
+        des ressources en eau, HydroTrack propose un système connecté capable
+        de mesurer précisément l’humidité du sol et d’indiquer le moment idéal
+        pour arroser les cultures.
+      </p>
+
+      <p>
+        Le projet repose sur un capteur d’humidité capacitif relié à un Arduino
+        UNO et un module ESP8266. Les données sont transmises toutes les six
+        heures vers un serveur Node-RED, puis affichées sur un dashboard cloud
+        hébergé sur IBM Cloud ou Raspberry Pi.
+      </p>
+
+      <p>
+        Grâce à cette architecture IoT robuste, l’utilisateur peut surveiller
+        ses cultures depuis n’importe quel smartphone et recevoir des alertes
+        précises pour éviter le gaspillage d’eau tout en garantissant une
+        irrigation optimale.
+      </p>
+    </section>
+
+    <!-- ===== Mission & Vision ===== -->
+    <section class="mission-section">
+      <div class="mission-card">
+        <h3>🎯 Notre mission</h3>
+        <p>
+          Permettre aux agriculteurs d’optimiser l’utilisation de l’eau grâce à
+          une technologie simple, accessible et efficace.
+        </p>
+      </div>
+
+      <div class="mission-card">
+        <h3>🌍 Notre vision</h3>
+        <p>
+          Contribuer à une agriculture plus intelligente et durable en
+          combinant IoT, énergie solaire et cloud computing.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Fonctionnalités ===== -->
+    <section class="features">
+      <h2 class="section-title">Pourquoi choisir HydroTrack ?</h2>
+
+      <div class="features1-container">
+        <div class="feature-card">
+          <h3>Surveillance continue</h3>
+          <p>
+            Mesure précise et constante de l’humidité du sol grâce à des
+            capteurs intelligents sans fil.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Alertes en temps réel</h3>
+          <p>
+            Notifications instantanées sur smartphone lorsque vos cultures
+            nécessitent un arrosage.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Données centralisées</h3>
+          <p>
+            Dashboard sécurisé permettant la visualisation des données en temps
+            réel depuis n’importe quel appareil.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Architecture technique ===== -->
+    <section class="tech-section">
+      <h2>Architecture du système</h2>
+      <p>
+        HydroTrack combine un capteur d’humidité capacitif, un Arduino UNO,
+        un module ESP8266 pour la transmission Wi-Fi, une alimentation solaire
+        5V autonome et un dashboard cloud interactif.
+      </p>
+
+      <p>
+        Un système de LED tricolore (vert, orange, rouge) permet également un
+        diagnostic rapide directement sur le terrain.
+      </p>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="./IMG/logo_projet.png"
+            alt="HydroTrack logo"
+            class="logo_footer"
+          />
+          <p>
+            HydroTrack est une solution intelligente permettant de surveiller
+            l’humidité des sols et d’optimiser l’arrosage.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a_propos.html">À propos</a></li>
+            <li><a href="team.html">Équipe</a></li>
+            <li><a href="nous_contacter.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Projet</h4>
+          <ul>
+            <li><a href="#">Fonctionnalités</a></li>
+            <li><a href="#">Sécurité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 HydroTrack — Créé par <strong>L'equipe HydroTrack</strong></p>
+      </div>
+    </footer>
+
+
+    <!-- Header scroll effect -->
+    <script>
+      const header = document.querySelector("header");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

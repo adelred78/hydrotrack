@@ -402,22 +402,15 @@ nav ul li a:hover {
   }
 }
 /*====================================== page de connexion ===================================*/
-/* ===== PAGE AUTH ===== */
-.auth-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  background-color: #f4f6f8;
-  font-family: Arial, sans-serif;
-}
 
 /* ===== CONTAINER ===== */
 .login-container {
   width: 100%;
   max-width: 380px;
   padding: 20px;
+  margin: auto;
+  margin-top: 130px;
 }
 
 /* ===== FORMULAIRE ===== */
@@ -501,3 +494,33 @@ nav ul li a:hover {
   text-align: center;
   font-size: 14px;
 }
+
+/* ===== A PROPOS ===== */
+
+
+.first1 {
+  margin-top: 200px; /* compensation header */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-image:url('../IMG/a_propos.png');
+  color: #0f172a;
+
+  padding: 100px 60px;
+  border-radius: 16px;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.features1-container {
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
