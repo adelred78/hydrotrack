@@ -81,6 +81,6 @@ if (signupForm) {
     }
 
     alert('Inscription réussie 🚀');
-    window.location.href = 'connexion.html';
+    window.location.href = 'app.html';
   });
 }
