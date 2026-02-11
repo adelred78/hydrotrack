@@ -37,3 +37,50 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
   localStorage.setItem('user', JSON.stringify(data));
   window.location.href = 'dashboard.html';
 });
+
+const signupForm = document.getElementById('signup-form');
+
+if (signupForm) {
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById('signup-username').value.trim();
+    const password = document.getElementById('signup-password').value;
+    const errorMessage = document.getElementById('signup-error');
+
+    if (errorMessage) {
+      errorMessage.style.display = 'none';
+      errorMessage.textContent = '';
+    }
+
+    // Vérifier si l'utilisateur existe déjà
+    const { data: existingUser } = await supabaseClient
+      .from('utilisateurs')
+      .select('*')
+      .eq('nom_utilisateur', username)
+      .single();
+
+    if (existingUser) {
+      errorMessage.textContent = "Nom d'utilisateur déjà utilisé.";
+      errorMessage.style.display = 'block';
+      return;
+    }
+
+    // Insérer le nouvel utilisateur
+    const { error } = await supabaseClient.from('utilisateurs').insert([
+      {
+        nom_utilisateur: username,
+        mot_de_passe: password,
+      },
+    ]);
+
+    if (error) {
+      errorMessage.textContent = "Erreur lors de l'inscription.";
+      errorMessage.style.display = 'block';
+      return;
+    }
+
+    alert('Inscription réussie 🚀');
+    window.location.href = 'connexion.html';
+  });
+}
