@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Smart Pack - HydroTrack</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="Style/index.css" />
   </head>
   <body>
@@ -13,17 +17,261 @@
       /></a>
       <nav>
         <ul>
-          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="index.html">Accueil</a></li>
           <li><a href="a_propos.html">A propos</a></li>
-          <li><a href="kit.html">Smart Pack</a></li>
+          <li><a href="kit.html" class="active">Smart Pack</a></li>
           <li><a href="team.html">Equipe</a></li>
-          <li>
-            <a href="connexion.html" class="login" style="color: white"
-              >Login</a
-            >
-          </li>
+          <li><a href="connexion.html" class="login">Login</a></li>
         </ul>
       </nav>
     </header>
+
+    <!-- 1️⃣ HERO SECTION (Même structure que l'accueil) -->
+    <div class="first" style="align-items: center;">
+      <h2>
+        <span>Smart Pack</span> HydroTrack
+      </h2>
+      <p style="font-size: 18px; color: #475569; margin: 10px auto 20px;">Surveillez votre terrain intelligemment, optimisez votre irrigation.</p>
+      <ul>
+        <li>
+          <a href="#commander">Commander maintenant</a>
+        </li>
+        <li>
+          <a href="#details" style="color: #1e5eff">Voir les détails</a>
+        </li>
+      </ul>
+      <div style="margin-top: 30px; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border: 5px solid white; max-width: 600px; width: 100%;">
+        <img src="./IMG/smart_sensor_modern.png" alt="Capteur intelligent HydroTrack" style="width: 100%; display: block;" />
+      </div>
+    </div>
+
+    <!-- 2️⃣ QUE CONTIENT LE SMART PACK ? -->
+    <section id="details" class="features" style="margin-top: 50px;">
+      <h2 class="features-title">
+        <span>Que contient le <i style="color: #478f47">Smart Pack</i> ?</span>
+      </h2>
+
+      <div class="team-container" style="max-width: 1200px;">
+        <div class="feature-card">
+          <i class="fas fa-thermometer-half" style="font-size: 40px; color: #1e5eff; margin-bottom: 15px;"></i>
+          <h3>Précision</h3>
+          <p>Capteur d’humidité et température haute précision.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-broadcast-tower" style="font-size: 40px; color: #1e5eff; margin-bottom: 15px;"></i>
+          <h3>Transmission</h3>
+          <p>Module de transmission sans fil longue portée.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-battery-full" style="font-size: 40px; color: #1e5eff; margin-bottom: 15px;"></i>
+          <h3>Autonomie</h3>
+          <p>Système énergétique basse consommation.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-cloud" style="font-size: 40px; color: #1e5eff; margin-bottom: 15px;"></i>
+          <h3>Cloud</h3>
+          <p>Accès sécurisé à vos données via la plateforme web.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-tools" style="font-size: 40px; color: #1e5eff; margin-bottom: 15px;"></i>
+          <h3>Installation</h3>
+          <p>Guide d’installation simple, rapide et intuitif.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3️⃣ POUR QUI ? (Style A propos) -->
+    <section class="features">
+      <h2 class="features-title">
+        <span>Pour <i style="color: #478f47">qui</i> ?</span>
+      </h2>
+      <div class="features-container">
+        <div class="feature-card">
+          <i class="fas fa-tractor" style="font-size: 40px; color: #1e5eff; margin-bottom: 15px;"></i>
+          <h3>Agriculteurs</h3>
+          <p>Optimisez vos rendements et gagnez du temps dans la gestion quotidienne des cultures.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-seedling" style="font-size: 40px; color: #1e5eff; margin-bottom: 15px;"></i>
+          <h3>Propriétaires</h3>
+          <p>Gardez un œil sur la santé de votre sol même lorsque vous êtes à des kilomètres.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-line" style="font-size: 40px; color: #1e5eff; margin-bottom: 15px;"></i>
+          <h3>Exploitations</h3>
+          <p>Intégrez une solution fiable dans votre démarche d'agriculture de précision.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4️⃣ AVANTAGES CLÉS -->
+    <section class="features">
+      <h2 class="features-title">
+        <span>Avantages <i style="color: #478f47">Clés</i></span>
+      </h2>
+      <div class="team-container" style="max-width: 1000px; justify-content: center;">
+        <div class="feature-card" style="padding: 20px; display: flex; align-items: center; gap: 15px; text-align: left; flex: 1 1 300px; max-width: 100%;">
+          <i class="fas fa-check-circle" style="font-size: 24px; color: #1e5eff;"></i>
+          <p style="margin: 0; font-weight: bold; color: #0f172a;">Surveillance en temps réel</p>
+        </div>
+        <div class="feature-card" style="padding: 20px; display: flex; align-items: center; gap: 15px; text-align: left; flex: 1 1 300px; max-width: 100%;">
+          <i class="fas fa-tint-slash" style="font-size: 24px; color: #1e5eff;"></i>
+          <p style="margin: 0; font-weight: bold; color: #0f172a;">Réduction du gaspillage d’eau</p>
+        </div>
+        <div class="feature-card" style="padding: 20px; display: flex; align-items: center; gap: 15px; text-align: left; flex: 1 1 300px; max-width: 100%;">
+          <i class="fas fa-leaf" style="font-size: 24px; color: #1e5eff;"></i>
+          <p style="margin: 0; font-weight: bold; color: #0f172a;">Optimisation des cultures</p>
+        </div>
+        <div class="feature-card" style="padding: 20px; display: flex; align-items: center; gap: 15px; text-align: left; flex: 1 1 300px; max-width: 100%;">
+          <i class="fas fa-bolt" style="font-size: 24px; color: #1e5eff;"></i>
+          <p style="margin: 0; font-weight: bold; color: #0f172a;">Installation rapide et facile</p>
+        </div>
+        <div class="feature-card" style="padding: 20px; display: flex; align-items: center; gap: 15px; text-align: left; flex: 1 1 300px; max-width: 100%;">
+          <i class="fas fa-mobile-alt" style="font-size: 24px; color: #1e5eff;"></i>
+          <p style="margin: 0; font-weight: bold; color: #0f172a;">Données accessibles 24/7</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5️⃣ COMMENT ÇA MARCHE ? -->
+    <section class="features">
+      <h2 class="features-title">
+        <span>Comment ça <i style="color: #478f47">marche</i> ?</span>
+      </h2>
+      <div class="features-container">
+        <div class="feature-card">
+          <div style="width: 60px; height: 60px; background: #1e5eff; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; border-radius: 50%; margin: 0 auto 15px;">1</div>
+          <h3>Commandez</h3>
+          <p>Choisissez le Smart Pack adapté à votre surface directement en ligne.</p>
+        </div>
+        <div class="feature-card">
+          <div style="width: 60px; height: 60px; background: #1e5eff; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; border-radius: 50%; margin: 0 auto 15px;">2</div>
+          <h3>Installez</h3>
+          <p>Enfoncez le capteur dans votre terrain et allumez le dispositif.</p>
+        </div>
+        <div class="feature-card">
+          <div style="width: 60px; height: 60px; background: #1e5eff; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; border-radius: 50%; margin: 0 auto 15px;">3</div>
+          <h3>Suivez</h3>
+          <p>Connectez-vous à HydroTrack et visualisez vos données en temps réel.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6️⃣ TARIFICATION -->
+    <section class="features">
+      <h2 class="features-title">
+        <span>Une offre <i style="color: #478f47">simple</i></span>
+      </h2>
+      <div class="feature-card" style="max-width: 450px; margin: 0 auto; border-top: 6px solid #478f47; padding: 40px; display: flex; flex-direction: column; align-items: center;">
+        <h3 style="font-size: 22px;">Smart Pack – Installation terrain</h3>
+        <p style="font-size: 45px; font-weight: bold; color: #1e5eff; margin: 15px 0;">149€ <span style="font-size: 18px; color: #475569; font-weight: normal;">/ kit</span></p>
+        <ul style="list-style: none; text-align: left; margin: 20px 0 30px; color: #475569; padding: 0; width: 100%; font-size: 16px;">
+          <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #478f47; margin-right: 15px; font-size: 18px;"></i>Capteur connecté IP67</li>
+          <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #478f47; margin-right: 15px; font-size: 18px;"></i>Module d'envoi de données inclus</li>
+          <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #478f47; margin-right: 15px; font-size: 18px;"></i>Accès illimité à l'application web</li>
+          <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #478f47; margin-right: 15px; font-size: 18px;"></i>Alertes SMS / Email incluses</li>
+          <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #478f47; margin-right: 15px; font-size: 18px;"></i>Support technique 24/7</li>
+        </ul>
+        <a href="#commander" class="btn-primary" style="display: block; width: 100%; text-decoration: none; font-size: 18px; padding: 15px 0; text-align: center; background-color: #1e5eff; font-weight: bold; border-radius: 12px; color: white;">Commander maintenant</a>
+      </div>
+    </section>
+
+    <!-- 7️⃣ FORMULAIRE DE COMMANDE (Utilisation du style Login-form) -->
+    <section id="commander" class="features">
+      <h2 class="features-title">
+        <span>Demande de <i style="color: #478f47">commande</i></span>
+      </h2>
+      <div class="login-container" style="max-width: 700px; margin-top: 0;">
+        <form class="login-form" onsubmit="event.preventDefault(); alert('Merci pour votre commande ! Nous vous contacterons très vite.');">
+          <h2 style="font-size: 24px;">Vos coordonnées</h2>
+          
+          <div class="form-row">
+            <input type="text" placeholder="Nom complet" required>
+            <input type="email" placeholder="Email" required>
+          </div>
+          
+          <div class="form-row">
+            <input type="tel" placeholder="Téléphone" required>
+            <input type="text" placeholder="Surface (ex: 500 m²)" required>
+          </div>
+          
+          <select required style="padding: 12px 14px; font-size: 15px; border-radius: 8px; border: 1px solid #d1d5db; outline: none; margin-bottom: 10px; width: 100%; font-family: 'Poppins', sans-serif;">
+            <option value="" disabled selected>Choisissez votre type de culture</option>
+            <option value="maraichage">Maraîchage / Légumes</option>
+            <option value="cereales">Céréales</option>
+            <option value="viticulture">Viticulture</option>
+            <option value="arboriculture">Arboriculture (Fruitiers)</option>
+            <option value="autre">Autre</option>
+          </select>
+
+          <input type="text" placeholder="Adresse du terrain / Livraison" required style="margin-bottom: 10px; width: 100%;">
+          
+          <textarea placeholder="Message (optionnel)" style="padding: 12px 14px; font-size: 15px; border-radius: 8px; border: 1px solid #d1d5db; outline: none; margin-bottom: 10px; resize: vertical; min-height: 100px; font-family: 'Poppins', sans-serif; width: 100%;"></textarea>
+
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Créer ma demande</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 8️⃣ CTA FINAL -->
+    <div class="first" style="margin-bottom: 100px; padding: 60px 40px;">
+      <h2>
+        Passez à l’agriculture <span>intelligente</span>
+      </h2>
+      <ul style="margin-top: 30px;">
+        <li><a href="#commander">Commander le Smart Pack</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="./IMG/logo_projet.png"
+            alt="HydroTrack logo"
+            class="logo_footer"
+          />
+          <p>
+            HydroTrack est une solution intelligente permettant de surveiller
+            l’humidité des sols et d’optimiser l’arrosage.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a_propos.html">À propos</a></li>
+            <li><a href="team.html">Équipe</a></li>
+            <li><a href="kit.html">Smart Pack</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Projet</h4>
+          <ul>
+            <li><a href="#">Fonctionnalités</a></li>
+            <li><a href="#">Sécurité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 HydroTrack — Créé par <strong>L'equipe HydroTrack</strong></p>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
   </body>
 </html>
