@@ -833,4 +833,118 @@ nav ul li a:hover {
   }
 }
 
+@media (max-width: 430px) {
 
+  /* ===== BODY ===== */
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 10px 15px;
+    margin-bottom: 90px;
+  }
+
+  nav ul {
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  header img {
+    width: 75px;
+  }
+  
+
+  /* ===== HERO SECTION ===== */
+  .first1 {
+    margin-top: 200px;
+    padding: 60px 25px;
+    border-radius: 18px;
+    text-align: center;
+  }
+
+  .first1 h1 {
+    font-size: 26px;
+  }
+
+  .first1 h2 {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  /* ===== ABOUT DESCRIPTION ===== */
+  .about-description {
+    padding: 50px 20px;
+    margin: 20px;
+    border-radius: 18px;
+  }
+
+  .about-description h2 {
+    font-size: 24px;
+  }
+
+  .about-description p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ===== SECTION TITLE ===== */
+  .section-title {
+    width: 90%;
+    font-size: 22px;
+    padding: 15px;
+  }
+
+  /* ===== FEATURES ===== */
+  .features
+  {
+    margin-top: 0;
+  }
+  .features-container {
+    display: flex;
+    flex-direction: column ;
+    
+    gap: 25px;
+  }
+
+  .feature-card {
+    padding: 30px 20px;
+  }
+
+  .feature-card h3 {
+    font-size: 16px;
+  }
+
+  .feature-card p {
+    font-size: 14px;
+  }
+
+  /* ===== ARCHITECTURE ===== */
+  .architecture {
+    padding: 60px 15px;
+  }
+
+  .architecture-overlay {
+    padding: 30px 15px;
+  }
+
+  .architecture-card {
+    padding: 30px 20px;
+  }
+
+  .architecture-card h2 {
+    font-size: 22px;
+  }
+
+  .architecture-card p {
+    font-size: 15px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+}
