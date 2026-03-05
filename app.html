@@ -1,27 +1,199 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HydroTrack</title>
-    <link rel="stylesheet" href="Style/app.css" />
-  </head>
-  <body>
-    <header>
-      <a href="app.html"
-        ><img
-          src="./IMG/logo_projet.png"
-          alt="Logo du projet HydroTrack"
-          class="logo"
-      /></a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HydroTrack App</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="Style/app.css">
+</head>
+<body>
+    <!-- Desktop Blocker -->
+    <div id="desktop-blocker">
+        <div class="blocker-content">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h2>Accès Mobile Uniquement</h2>
+            <p>Veuillez ouvrir cette page sur un téléphone pour accéder à HydroTrack.</p>
+        </div>
+    </div>
 
-      <ul>
-        <li>
-          Utilisateur :
-          <strong id="user-name">exemple@gmail.com</strong>
-        </li>
-        <li>Salut</li>
-      </ul>
-    </header>
-  </body>
+    <!-- App Container -->
+    <div id="app-container">
+        
+        <!-- Dashboard Page -->
+        <section id="dashboard" class="page active">
+            <header class="app-header">
+                <div class="logo">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>HydroTrack</span>
+                </div>
+                <button class="icon-btn" onclick="navigateTo('alerts')">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-badge" id="alert-badge" style="display: none;"></span>
+                </button>
+            </header>
+
+            <main class="content-scroll">
+                <div class="gauge-card card">
+                    <h3 class="card-title">Humidité du sol</h3>
+                    
+                    <div class="gauge-container">
+                        <svg viewBox="0 0 100 100" class="circular-gauge">
+                            <defs>
+                                <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4facfe" />
+                                    <stop offset="100%" stop-color="#00f2fe" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="circular-bg" cx="50" cy="50" r="40"></circle>
+                            <circle class="circular-fill" id="humidity-gauge-fill" cx="50" cy="50" r="40"></circle>
+                        </svg>
+                        <div class="gauge-value">
+                            <span id="humidity-value">--</span><span class="percent-sign">%</span>
+                        </div>
+                    </div>
+
+                    <div class="status-indicator">
+                        <div class="status-dot green" id="status-dot"></div>
+                        <h4 id="status-text">Collecte des données...</h4>
+                    </div>
+                </div>
+
+                <div class="action-bade card" id="action-badge">
+                    <i class="fa-solid fa-circle-check icon-status"></i>
+                    <span id="action-text">Arrosage non nécessaire aujourd'hui</span>
+                </div>
+            </main>
+        </section>
+
+
+        <!-- Data (Historique) Page -->
+        <section id="data" class="page">
+            <header class="app-header">
+                <h2>Historique</h2>
+            </header>
+            <main class="content-scroll">
+                <div class="metrics-row">
+                    <div class="metric-card card">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <div class="metric-info">
+                            <span class="metric-label">Dernière mesure</span>
+                            <span class="metric-val" id="last-update">--</span>
+                        </div>
+                    </div>
+                    <div class="metric-card card">
+                        <i class="fa-solid fa-battery-half"></i>
+                        <div class="metric-info">
+                            <span class="metric-label">Batterie ESP32</span>
+                            <span class="metric-val" id="battery-level">--%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card card">
+                    <h3 class="card-title">Évolution sur 7 jours</h3>
+                    <div class="chart-container">
+                        <canvas id="humidityChart"></canvas>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+
+        <!-- Alerts Page -->
+        <section id="alerts" class="page">
+            <header class="app-header">
+                <button class="icon-btn back-btn" onclick="navigateTo('dashboard')">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <h2>Alertes</h2>
+                <div style="width: 24px;"></div> <!-- Spacer -->
+            </header>
+            <main class="content-scroll">
+                <div class="alerts-list" id="alerts-list">
+                    <!-- Cards will be injected by JS -->
+                </div>
+            </main>
+        </section>
+
+
+        <!-- Settings Page -->
+        <section id="settings" class="page">
+            <header class="app-header">
+                <h2>Paramètres</h2>
+            </header>
+            <main class="content-scroll">
+                <div class="settings-group card">
+                    <h3 class="settings-title">Préférences d'arrosage</h3>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label for="threshold-slider">Seuil d'humidité</label>
+                            <span class="setting-desc">Déclenchement de l'alerte ou arrosage</span>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="threshold-slider" min="0" max="100" value="20">
+                            <span id="threshold-val">20%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-group card">
+                    <h3 class="settings-title">Système</h3>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Notifications Push</label>
+                            <span class="setting-desc">Avertissements d'arrosage requis</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="notification-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label for="freq-select">Fréquence de mesure</label>
+                            <span class="setting-desc">Impacte la batterie de l'ESP32</span>
+                        </div>
+                        <select id="freq-select" class="custom-select">
+                            <option value="15">Toutes les 15 min</option>
+                            <option value="30">Toutes les 30 min</option>
+                            <option value="60" selected>Toutes les heures</option>
+                            <option value="120">Toutes les 2 heures</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="btn-primary" id="save-settings-btn">Enregistrer les modifications</button>
+            </main>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <nav id="bottom-nav">
+            <button class="nav-item active" data-target="dashboard">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </button>
+            <button class="nav-item" data-target="data">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Données</span>
+            </button>
+            <button class="nav-item" data-target="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Paramètres</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
